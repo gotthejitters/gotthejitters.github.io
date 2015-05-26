@@ -1,0 +1,15 @@
+*.log
+*.pot
+*.pyc
+local_settings.py
+*.DS_Store
+.DS_Store
+*.swp
+.project
+.pydevproject
+.idea
+.coverage
+.tmp_*
+xcuserdata/
+*.sublime*
+.webassets-cache/
