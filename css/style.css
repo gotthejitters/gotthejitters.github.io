@@ -72,8 +72,8 @@ h6 {
 .row,
 .row .row {
 	height: 100%;
-	max-width: 100%;
-	margin:0;
+	max-width: 960px;
+	margin: 0 auto;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -142,6 +142,17 @@ blockquote.caption-2:before {
 }
 .hero-title h2, .hero-title em, .hero-title p {
     color: #fff;
+    text-shadow: 2px 2px #444;
+}
+
+.section-bride img {
+    height: 500px;
+    width: auto;
+}
+
+.section-groom img {
+    height: 500px;
+    width: auto;
 }
 
 /*==== Date Block ====*/
@@ -581,10 +592,10 @@ label.error {
 .top-bar {
 	position: relative;
 	top: 0;
-	width: 100%;
+	width: 960px;
 	z-index: 997;
 	text-align: left;
-    margin-bottom: 0;
+    margin: 0 auto;
     background: rgba(255, 255, 255, 0.9);
 }
 .top-bar .name {
