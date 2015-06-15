@@ -89,15 +89,6 @@ blockquote {
 	margin-bottom: 0;
 	text-align: left;
 }
-blockquote:before {
-	content: "";
-	position: absolute;
-	height: 100%;
-	top: 0;
-	right: 0;
-	width: 1px;
-	background:#d9d9d9;
-}
 blockquote.caption-2:before {
 	background:none
 }
@@ -187,7 +178,7 @@ blockquote.caption-2:before {
 	font-size: 12em;
 }
 .date-container, .subline, .side-nav {
-	color: #987c61;
+	/*color: #987c61;*/
 	font-family: 'Roboto Slab', serif;
 	font-weight:bold;	
 	text-transform: uppercase;	
