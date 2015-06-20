@@ -27,6 +27,8 @@
 	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
 	<link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
 	<link rel="shortcut icon" href="img/favicon.ico">
+
+    <script src="http://www.parsecdn.com/js/parse-1.4.2.min.js"></script>
 </head>
 <body>
 
@@ -419,10 +421,8 @@
 					<span class="hearts"></span>
 				</div>
 				<div class="small-12 large-10 large-centered columns">
-					<form data-abide method="POST" action="#" class="rsvp-form custom" id="js-form">			
+					<form data-abide="ajax" class="rsvp-form custom" id="js-form">			
 						<fieldset class="rsvp-details">
-							<!-- Displays a global alert if required fields are missing -->
-							<div class="js-display"></div>
 							<legend>
 								Kindly respond by <strong>October 1st, 2015</strong>. We look forward to celebrating with you!
 							</legend>
@@ -445,8 +445,9 @@
 									<small class="error">Valid Email is required.</small>
 								</div>
 								<div class="large-6 columns">
-									<label for="phone">Phone</label>
-									<input type="tel" class="input-field" id="phone" name="phone" value="" placeholder="A phone number is optional">
+									<label for="party">Total in your party</label>
+									<input type="number" class="input-field" id="party" name="party" value="" placeholder="Total # in your party" min="1" max="10" required>
+                                    <small class="error">Total is required.</small>
 								</div>
 							</div>							
 						</fieldset>
@@ -454,44 +455,55 @@
 							<legend>Will you be attending?</legend>
 							<div class="large-6 columns">
 								<label for="radio1">
-									<input name="radio" type="radio" id="radio1" style="display:none;" value="Accepts with Pleasure!" required>
+									<input name="rsvp" type="radio" id="radio1" style="display:none;" value="accept" required>
 									<span class="custom radio accept"></span>
 									<span class="radio-label">Accepts with Pleasure!</span>
 								</label>
 							</div>
 							<div class="large-6 columns">
 								<label for="radio2">
-									<input name="radio" type="radio" id="radio2" style="display:none;" value="Declines with Regret." required>
+									<input name="rsvp" type="radio" id="radio2" style="display:none;" value="decline" required>
 									<span class="custom radio decline"></span>
 									<span class="radio-label">Declines with Regret.</span>
 								</label>
 							</div>
+                            <div class="row rsvp-events hide">
+                                <legend>
+                                    What events can we expect you at?
+                                </legend>
+                                <div class="large-6 columns">
+                                  <label for="wedding">Sangeet + Wedding (Bengaluru, India)</label>
+                                  <select id="wedding" name="wedding">
+                                    <option value="" selected>Will you attend?</option>
+                                    <option value="true">Yes!</option>
+                                    <option value="false">No :(</option>
+                                  </select>
+                                </div>
+                                <div class="large-6 columns">
+                                  <label for="reception">Reception (Long Island, NY)</label>
+                                  <select id="reception" name="reception">
+                                    <option value="" selected>Will you attend?</option>
+                                    <option value="true">Yes!</option>
+                                    <option value="false">No :(</option>
+                                  </select>
+                                </div>
+                            </div>
+                            <div class="row rsvp-shuttle hide">
+                                <legend>
+                                </legend>
+                                <div class="large-6 large-centered columns">
+                                  <label for="shuttle">Will you be taking the shuttle from NYC to the venue?</label>
+                                  <select id="shuttle" name="shuttle">
+                                    <option value="" selected>Need a ride?</option>
+                                    <option value="true">Yes</option>
+                                    <option value="false">No</option>
+                                  </select>
+                                </div>
+                            </div>              
 						</fieldset>
-						<fieldset class="rsvp-meal-choice">
-							<legend>
-								Please select your meal choices
-							</legend>
-							<div class="row">
-							    <div class="large-6 columns">
-							      <label for="main-course">Main</label>
-							      <select id="main-course" name="main-course">
-							        <option selected>None</option>
-							        <option>Chicken</option>
-							        <option>Beef</option>
-							        <option>Vegetarian</option>
-							      </select>
-							    </div>
-							    <div class="large-6 columns">
-							      <label for="dessert">Dessert</label>
-							      <select id="dessert" name="dessert">
-							        <option selected>None</option>
-							        <option>Chocolate Cake</option>
-							        <option>Lemon Cheesecake</option>
-							        <option>Key Lime Pie</option>
-							      </select>
-							    </div>
-						    </div>				
-						</fieldset>		
+
+                        <!-- Displays a global alert if required fields are missing -->
+                        <div class="js-display"></div>
 						<button type="submit" class="button radius" id="js-submit-btn">
 							<i class="fa fa-envelope"></i> 
 							<span class="btn-label">Send</span>

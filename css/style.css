@@ -444,6 +444,14 @@ form.custom .custom.radio.checked:before {
 form.custom .dropdown {
 	text-align: left;
 }
+.rsvp-events legend {
+    margin: 0 auto;
+    line-height: 4;
+}
+.rsvp-shuttle legend {
+    margin: 0 auto;
+    line-height: 4;
+}
 
 /*==== Error Handling ====*/
 
@@ -537,6 +545,13 @@ label.error {
 	margin: 0 0 2em;
 }
 
+.error-panel {
+    background-color: rgba(198, 15, 19, 0.1);
+    border-color: #c60f13;
+    padding: 1em;
+    font-size: 0.850em;
+    margin: 0 0 2em;
+}
 
 /*-----------------------------------------------------------------------------------*/
 /*	5.	Image Gallery

@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    Parse.initialize("AHIy9mpKJEjOzLWZ3EEM3p822bXjevKRB5i1y7lw", "b3iPxis4qWRwM5XGyUKrF48QBWjK8F3yeUKK01wd");
 
 	/*-----------------------------------------------------------------------------------*/
 	/*	Smooth Scroll
@@ -59,40 +60,75 @@ $(document).ready(function() {
 	/*-----------------------------------------------------------------------------------*/
 	/*	RSVP Form Validation + Submission
 	/*-----------------------------------------------------------------------------------*/
+    function getFormData($form){
+        var unindexed_array = $form.serializeArray();
+        var indexed_array = {};
+
+        $.map(unindexed_array, function(n, i){
+            indexed_array[n['name']] = n['value'];
+        });
+
+        return indexed_array;
+    }
 
 	function rsvpFormSubmit() {
 
 		// this is the id of the form
 		var formID = $("#js-form");
-		
+
 		// submits form with ajax method
-		formID.on("submit", function() {
+        formID.on({
+            submit: function() {
+                return false;
+            },
+            valid: function() {
+                var ResponseObject = Parse.Object.extend("ResponseObject");
+                var respObject = new ResponseObject();
+                var data = getFormData($(this));
+                respObject.save(data, {
+                    success: function(object) {
+                        $(".js-display")
+                            .removeClass("error-panel")
+                            .addClass("message-panel")
+                            .html('Thanks for your RSVP!'); 
+                        $("#js-submit-btn").hide();
+                    },
+                    error: function(object) {
+                        $(".js-display")
+                            .removeClass("message-panel")
+                            .addClass("error-panel")
+                            .html("Uh oh, something went wrong when submitting your RSVP. Can you try again a bit later?");
+                    }
+                });                
+            },
+            invalid: function() {
+                $(".js-display")
+                    .removeClass("message-panel")
+                    .addClass("error-panel")
+                    .html("Please fill out the details and try again!");
+            }
+        });
 
-			$.ajax({
-				url: "mailer.php",
-				type: "POST",		    	
-		        data: formID.serialize(), // serializes the form's elements.
-
-		        success: function(data) {
-		        	$(".js-display")
-		        				.addClass("message-panel")
-		        				.html(data); // show response from the php script.
-		        }		    
-
-		    });
-
-		    return false; // avoid to execute the actual submit of the form.
-
-		});
-
-		// Show/Hide RSVP Menu selection on accept/decline
-		$(".decline").on("click", function(){
-			$(".rsvp-meal-choice").fadeOut();
-		});	
-		$(".accept").on("click", function(){
-			$(".rsvp-meal-choice").fadeIn();
-		});	
-
+        $("input[name='rsvp']").on("change", function() {
+            if ($(this).val() === "accept") {
+                $(".rsvp-events").fadeIn();
+                $("#wedding").attr('required', '');
+                $("#reception").attr('required', '');
+            } else {
+                $(".rsvp-events").fadeOut();
+                $("#wedding").removeAttr('required');
+                $("#reception").removeAttr('required');
+            }
+        });
+        $("#reception").on("change", function() {
+            if ($(this).val() === "true") {
+                $(".rsvp-shuttle").fadeIn();
+                $("#shuttle").attr('required', '');
+            } else {
+                $(".rsvp-shuttle").fadeOut();
+                $("#shuttle").removeAttr('required');
+            }
+        });
 	}
 	rsvpFormSubmit();
 
