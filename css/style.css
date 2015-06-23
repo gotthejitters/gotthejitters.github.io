@@ -130,6 +130,7 @@ blockquote.caption-2:before {
     bottom: 0;
     left: 0;
     right: 0;
+    z-index: 5;
 }
 .hero-title h2, .hero-title em, .hero-title p {
     color: #fff;
@@ -144,6 +145,10 @@ blockquote.caption-2:before {
 .section-groom img {
     height: 500px;
     width: auto;
+}
+
+#section-0 {
+    position: relative;
 }
 
 /*==== Date Block ====*/
@@ -227,7 +232,7 @@ div[id*="section-"] {
 	display: table-cell;
 	height: 10em;
 	text-align: center;
-	padding: 4em;
+	padding: 0.5em;
 	vertical-align: middle;
 	width: 50%;	
 }
@@ -236,10 +241,12 @@ div[id*="section-"] {
 	cursor: pointer;
 }
 .block-logo img {
+    border-radius: 10px;
 	opacity: .5;
 	-webkit-filter: grayscale(1);
 	-webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
     -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+    padding: 0;
 }
 .block-logo:hover img {
 	opacity: 1;
@@ -591,6 +598,19 @@ label.error {
 }
 .overlay-label:hover {
 	opacity: 1;
+}
+
+.flex-direction-nav a {
+    top: 50%;
+    color: #fff;
+}
+
+.flex-direction-nav .flex-next {
+    right: 10px!important;
+}
+
+.flex-direction-nav .flex-prev {
+    left: 10px!important;
 }
 
 /* Navigation */
