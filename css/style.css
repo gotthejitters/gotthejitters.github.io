@@ -80,9 +80,6 @@ h6 {
 /*	2.	Main Content Styles
 /*-----------------------------------------------------------------------------------*/
 
-header {
-	margin-top: 0.5em;
-}
 blockquote {
 	border-left: none;
 	padding: 4em 2em;	
@@ -100,7 +97,7 @@ blockquote.caption-2:before {
 	margin: 6em 0 2em;
 }
 .section-title {	
-	border-bottom: 4px double #c9b29b;
+	/*border-bottom: 4px double #c9b29b;*/
 	display: inline-block;
 	text-align: center;
 	font-size: 4em;
@@ -136,7 +133,46 @@ blockquote.caption-2:before {
     color: #fff;
     text-shadow: 2px 2px #444;
 }
-
+.flexslider {
+    margin: 0;
+}
+.flexslider img {
+  /*max-width: 960px;
+  max-height: 720px;
+  width: auto !important;
+  height: auto;
+  height: 0;
+  padding-top: 13.33%;
+  */
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+}
+.hero-1 {
+    background-image: url('../img/hero-1.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.hero-2 {
+    background-image: url('../img/hero-2.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.hero-3 {
+    background-image: url('../img/hero-3.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.hero-4 {
+    background-image: url('../img/hero-4.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.hero-5 {
+    background-image: url('../img/hero-5.jpg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 .section-bride img {
     height: 500px;
     width: auto;
@@ -601,8 +637,12 @@ label.error {
 }
 
 .flex-direction-nav a {
-    top: 50%;
-    color: #fff;
+    top: 40%;
+    color: #ddd;
+}
+
+.flex-direction-nav a:hover {
+    color: #de675f;
 }
 
 .flex-direction-nav .flex-next {
