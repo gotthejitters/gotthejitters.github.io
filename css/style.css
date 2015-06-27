@@ -89,12 +89,19 @@ blockquote {
 blockquote.caption-2:before {
 	background:none
 }
+.bodytext p {
+    text-align: left;
+}
 .subline {
 	padding: 1em 0.5em 0;
+    text-align: center !important;
+}
+.info {
+    font-size: 75%;
 }
 .section-title-container {	
 	text-align: center;
-	margin: 6em 0 2em;
+	margin: 3em 0 2em;
 }
 .section-title {	
 	/*border-bottom: 4px double #c9b29b;*/
@@ -137,52 +144,18 @@ blockquote.caption-2:before {
     margin: 0;
 }
 .flexslider img {
-  /*max-width: 960px;
-  max-height: 720px;
-  width: auto !important;
-  height: auto;
-  height: 0;
-  padding-top: 13.33%;
-  */
   display: block;
   margin: 0 auto;
   width: 100%;
-}
-.hero-1 {
-    background-image: url('../img/hero-1.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.hero-2 {
-    background-image: url('../img/hero-2.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.hero-3 {
-    background-image: url('../img/hero-3.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.hero-4 {
-    background-image: url('../img/hero-4.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
-}
-.hero-5 {
-    background-image: url('../img/hero-5.jpg');
-    background-repeat: no-repeat;
-    background-size: contain;
 }
 .section-bride img {
     height: 500px;
     width: auto;
 }
-
 .section-groom img {
     height: 500px;
     width: auto;
 }
-
 #section-0 {
     position: relative;
 }

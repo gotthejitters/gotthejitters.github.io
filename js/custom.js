@@ -165,18 +165,33 @@ function initialize() {
 				{ "saturation": 62 },
 				{ "lightness": -7 }
 			]
-		},{
+		},
+        {
+            "featureType": "road.highway",
+            "stylers": [
+                { "visibility": "simplified" },
+                { "saturation": -20 }
+            ]
+        },
+        {
+            "featureType": "road.arterial",
+            "stylers": [
+                { "visibility": "simplified" }
+            ]
+        },
+        {
 			"featureType": "poi",
 			"stylers": [
 				{ "hue": "#ff0000" },
 				{ "lightness": 14 }
 			]
-		},{
+		},
+        {
 			"stylers": [
 				{ "hue": "#ff0000" }
 			]
 		}
-	]
+	];
 
 	var mapOptions = {
 		zoom: 14,
