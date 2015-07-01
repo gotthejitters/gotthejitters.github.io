@@ -51,7 +51,7 @@ $(document).ready(function() {
 		$('.flexslider').flexslider({
 			animation: "slide",
 			slideshow: true,
-            slideshowSpeed: 7000,
+            slideshowSpeed: 5000,
 			touch: true,
             controlNav: false
 		});

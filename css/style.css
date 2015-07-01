@@ -644,6 +644,9 @@ label.error {
 	padding-left: 1em;
 	margin-right: 1em;
 }
+.top-bar .name a {
+    color:#333;
+}
 .top-bar.expanded .name {
     color:#888;
 }
