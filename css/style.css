@@ -265,6 +265,11 @@ div[id*="section-"] {
 	width: auto;
 }
 
+.block-grid-center > li {
+    float: none;
+    display: inline-block;
+}
+
 /*==== Content Block ====*/
 
 .content-block {
